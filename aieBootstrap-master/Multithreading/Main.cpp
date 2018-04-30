@@ -1,8 +1,11 @@
 #include <iostream>
+#include "Job_System.h"
 
 
 void main()
 {
-	static const int VECTOR_COUNT = 5000000;
-	
+	Job_System job;
+
+	job.System();
+
 }
