@@ -11,11 +11,12 @@ public:
 	Job_System();
 	~Job_System();
 
-	void System();
+	void JobOne();
+	void JobTwo();
+	void JobThree();
+
 
 private:
-
-	float num = 1;
 
 	std::vector<Job_System> list;
 
