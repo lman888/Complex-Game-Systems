@@ -6,6 +6,6 @@ void main()
 {
 	Job_System job;
 
-	job.System();
+	job.JobOne();
 
 }

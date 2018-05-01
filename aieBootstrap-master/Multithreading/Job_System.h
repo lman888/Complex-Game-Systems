@@ -3,6 +3,8 @@
 #include <thread>
 #include <mutex>
 #include <vector>
+#include "Workers.h"
+
 
 
 class Job_System
@@ -11,17 +13,14 @@ public:
 	Job_System();
 	~Job_System();
 
-	void JobOne();
-	void JobTwo();
-	void JobThree();
-
+	void JobOne(std::thread *thread);
 
 private:
+	
+	Workers workers;						///Calls the Worker Class
+	
+	std::mutex  guard;						///Locks and Unlocks our Threads
+	std::thread thread;						///First Thread
 
-	std::vector<Job_System> list;
-
-	std::thread thread1;
-	std::thread thread2;
-	std::thread thread3;
 };
 
