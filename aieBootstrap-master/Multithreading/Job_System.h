@@ -1,20 +1,28 @@
 #pragma once
 #include <iostream>
+#include <thread>
+#include <mutex>
 #include "Workers.h"
+#include <string>
 
 
 
-class Job_System
+class Job_System : public Workers
 {
 public:
 	Job_System();
 	~Job_System();
 
-	void JobOne();
+	void JobOne(int num);
+	void JobTwo(std::string sentence);
+	void Timer();
 
 private:
 	
-	Workers workers;						///Calls the Worker Class
+	int numberCount = 0;
+	std::mutex myMutex;				///Creates mutex
+	//std::thread myThread;			///Creates a thread
+	bool isTaskRunning;
 	
 };
 

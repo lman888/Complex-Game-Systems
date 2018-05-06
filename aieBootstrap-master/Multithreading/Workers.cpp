@@ -10,13 +10,12 @@ Workers::Workers()
 
 Workers::~Workers()
 {
+
 }
 
-void Workers::StartTask(void * fpt)
+void Workers::start()
 {
-	///Start of Lambda
-	myThread = std::thread([this] 
-	{
-
-	});
+	std::thread worker;
 }
+
+

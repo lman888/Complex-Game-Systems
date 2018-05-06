@@ -1,8 +1,7 @@
 #pragma once
 #include <list>
-#include <mutex>
 #include <thread>
-
+#include "Job_System.h"
 
 class Workers
 {
@@ -10,13 +9,7 @@ public:
 	Workers();
 	~Workers();
 
+	void start();
 
-	void StartTask(void *fpt);
-
-
-private:
-	std::list<Workers> list;		///Creates a list of workers
-	std::mutex myMutex;				///Creates mutex
-	std::thread myThread;			///Creates a thread
-	bool isRunning = false;
+	std::thread workerThread;						///A single worker
 };
