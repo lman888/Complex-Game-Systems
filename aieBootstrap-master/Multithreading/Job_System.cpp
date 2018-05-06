@@ -12,7 +12,7 @@ Job_System::~Job_System()
 {
 }
 
-void Job_System::JobOne(std::thread *thread)
+void Job_System::JobOne()
 {
 	
 }
