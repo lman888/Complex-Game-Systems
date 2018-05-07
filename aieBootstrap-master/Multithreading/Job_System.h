@@ -15,13 +15,14 @@ public:
 
 	void JobOne(int num);
 	void JobTwo(std::string sentence);
-	void Timer();
+	void TestJob();
+
 
 private:
 	
 	int numberCount = 0;
 	std::mutex myMutex;				///Creates mutex
-	//std::thread myThread;			///Creates a thread
+	std::thread myThread;			///Creates a thread
 	bool isTaskRunning;
 	
 };

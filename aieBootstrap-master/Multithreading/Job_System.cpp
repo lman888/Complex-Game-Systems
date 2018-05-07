@@ -16,7 +16,7 @@ void Job_System::JobOne(int num)
 	if (numberCount < num)
 	{
 		///Start of Lambda
-		workerThread = std::thread([&]
+		myThread = std::thread([&]
 		{
 			if (numberCount != num)
 			{
@@ -33,31 +33,28 @@ void Job_System::JobOne(int num)
 					}
 				}
 			}
-		});
+		});	///End of Lambda
 
-		workerThread.join();
+		myThread.join();
 	}
 }
 
 void Job_System::JobTwo(std::string sentence)
 {
-	workerThread = std::thread([&] 
+	myThread = std::thread([&]
 	{
-		printf("Hello my name is Thread\n");
+		printf("Hello i am a boi\n");
 		printf("What is your name?\n");
 		
 		std::cout << sentence << std::endl;
 	});
 
-	workerThread.join();
+	myThread.join();
 }
 
-void Job_System::Timer()
+void Job_System::TestJob()
 {
-	workerThread = std::thread([]
-	{
-		int timer;
-	});
+	std::thread worker;
 }
 
 
