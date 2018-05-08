@@ -1,5 +1,11 @@
 #include <iostream>
-#include "Job_System.h"
+#include "Job_System.h"		///Includes the Job Class
+#include "Workers.h"		///Includes the Workers
+#include <string>
+#include <thread>
+#include <chrono>
+
+
 
 
 void main()

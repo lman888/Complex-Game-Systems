@@ -7,7 +7,7 @@
 
 
 
-class Job_System : public Workers
+class Job_System
 {
 public:
 	Job_System();

@@ -23,6 +23,10 @@ void Workers::start()
 	}
 }
 
+void Workers::SetJob()
+{
+}
+
 void Workers::stop()
 {
 	std::lock_guard<std::mutex> mutex(workerMutex);			
