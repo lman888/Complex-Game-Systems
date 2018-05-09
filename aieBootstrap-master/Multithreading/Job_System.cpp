@@ -4,57 +4,23 @@
 
 Job_System::Job_System()
 {
+
 }
 
 
 Job_System::~Job_System()
 {
+
 }
 
-void Job_System::JobOne(int num)
+void Job_System::process()
 {
-	if (numberCount < num)
-	{
-		///Start of Lambda
-		myThread = std::thread([&]
-		{
-			if (numberCount != num)
-			{
-				isTaskRunning = true;
-				while (isTaskRunning == true)
-				{
-					std::cout << numberCount << std::endl;
-					numberCount++;
-
-					if (numberCount == num)
-					{
-						numberCount++;
-						isTaskRunning = false;
-					}
-				}
-			}
-		});	///End of Lambda
-
-		myThread.join();
-	}
+	std::cout << "Starting Processing Request" << std::endl;
 }
 
-void Job_System::JobTwo(std::string sentence)
+void Job_System::finish()
 {
-	myThread = std::thread([&]
-	{
-		printf("Hello i am a boi\n");
-		printf("What is your name?\n");
-		
-		std::cout << sentence << std::endl;
-	});
-
-	myThread.join();
-}
-
-void Job_System::TestJob()
-{
-	std::thread worker;
+	std::cout << "Finished Request" << std::endl;
 }
 
 

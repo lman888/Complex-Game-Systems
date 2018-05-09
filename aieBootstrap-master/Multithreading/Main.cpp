@@ -4,23 +4,23 @@
 #include <string>
 #include <thread>
 #include <chrono>
+#include <threadpoolapiset.h>
 
 
 
+void work()
+{
+	std::cout << "Thread is working" << std::endl;
+}
 
 void main()
 {
 	Job_System job;
 	int userNumber;
-	std::string userSentence;
+	
+	//job.JobOne();
+	//job.JobTwo();
+	Workers worker;
 
-	std::cout << "Please enter a number above 10" << std::endl;
-	std::cin >> userNumber;
-
-	job.JobOne(userNumber);
-
-	std::cout << "New Task" << std::endl;
-	std::cin >> userSentence;
-	job.JobTwo(userSentence);
 	system("pause");
 }

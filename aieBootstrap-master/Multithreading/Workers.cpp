@@ -8,35 +8,27 @@ Workers::Workers()
 }
 
 
+void Workers::Run()
+{
+	while (running)
+	{
+		if (ready)
+		{
+			ready = false;
+			
+		}
+	}
+}
+
+void Workers::getCondition(std::condition_variable *& cv)
+{
+
+}
+
 Workers::~Workers()
 {
-	stop();													///Calls stop and sets isRunning to false
+
 }
 
-void Workers::start()
-{
-	std::lock_guard<std::mutex> mutex(workerMutex);			
-	if (isRunning == true)
-	{
-		return;
-		isRunning = true;
-	}
-}
 
-void Workers::SetJob()
-{
-}
-
-void Workers::stop()
-{
-	std::lock_guard<std::mutex> mutex(workerMutex);			
-	if (isRunning == false)
-	{
-		return;
-		isRunning = false;
-	}
-
-	//cv.notify_all();										///Notifies the other threads
-	workerThread.join();									///Join this thread to the main thread
-}
 
