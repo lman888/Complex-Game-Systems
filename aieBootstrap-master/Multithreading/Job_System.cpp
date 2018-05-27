@@ -13,14 +13,21 @@ Job_System::~Job_System()
 
 }
 
-void Job_System::process()
+void Job_System::AddJob(int(*Fpt))
 {
-	std::cout << "Starting Processing Request" << std::endl;
+	jobMutex.lock();
+
+	jobs.push_back((int)Fpt);					///Adds the function to the list of jobs
+
+	jobMutex.unlock();
 }
 
-void Job_System::finish()
+void Job_System::ExecuteJob()
 {
-	std::cout << "Finished Request" << std::endl;
+
+	for (int i = 0; i < jobs.size; i++)
+	{
+		std::cout << i << std::endl;
+	}
+
 }
-
-

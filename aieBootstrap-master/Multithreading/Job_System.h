@@ -1,23 +1,20 @@
 #pragma once
 #include <iostream>
-#include <thread>
 #include <mutex>
-#include <string>
 #include <condition_variable>
+#include <vector>
+#include "Workers.h"
 
-#include "requests.h"
-
-class Job_System : public requests 
+class Job_System : public Workers
 {
 public:
 	Job_System();
 	~Job_System();
 	
+	void AddJob(int(*Fpt));
+	void ExecuteJob();
 
-	void process();
-	void finish();
-
-	std::thread jobThread;
+	std::vector<int> jobs;
 	std::mutex jobMutex;
 	std::condition_variable cv;
 };
